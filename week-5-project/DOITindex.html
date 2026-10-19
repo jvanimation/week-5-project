@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM Practice</title>
+    <link rel="stylesheet" href="DOITstyle.css">
+</head>
+
+<body>
+    <div class="filter-wrap">
+        <button type="button" id="filterBtn" class="filter-btn" aria-haspopup="true" aria-expanded="false"
+            aria-label="Filter tasks" title="Filter tasks">&#9660; Filter</button>
+        <div id="filterMenu" class="filter-menu hidden" role="group" aria-label="Filter tasks">
+            <label><input type="checkbox" id="showChecked" checked> Show checked</label>
+            <label><input type="checkbox" id="showUnchecked" checked> Show unchecked</label>
+        </div>
+    </div>
+    <button type="button" id="themeBtn" class="theme-btn" aria-pressed="false" aria-label="Toggle dark mode"
+        title="Toggle dark mode">🌙</button>
+    <h1 id="title">DO-IT</h1>
+    <p id="clock" class="clock" aria-live="off"></p>
+    <!-- add a Task input form -->
+    <form id="taskForm">
+        <input type="text" id="taskInput" placeholder="Whachu gotta do?">
+        <button type="submit" id="addTask">Add</button>
+        <button type="button" id="voiceBtn" class="voice-btn" title="Voice command"
+            aria-label="Voice command">🎤</button>
+    </form>
+    <p id="voiceStatus" class="voice-status" aria-live="polite"></p>
+
+    <ul id="list"></ul>
+    <p id="filterNote" class="filter-note" aria-live="polite"></p>
+    <p id="listError" class="error-text"></p>
+    <div id="container"></div>
+    <script src="DOITscript.js" defer></script>
+</body>
+
+</html>
