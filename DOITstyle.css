@@ -1,0 +1,326 @@
+body {
+    background-color: hsl(60, 30%, 50%);
+    text-align: center;
+}
+
+#title {
+    font-size: 5rem;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    display: inline-block;
+    padding: 0 40px;
+    border-radius: 999px;
+}
+
+.highlight {
+    background-color: hsl(0, 0%, 10%);
+}
+
+.hidden {
+    display: none;
+}
+
+.card {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: rgb(0, 123, 255);
+    box-shadow: 2px 2px 5px rgb(45, 45, 45);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.error-text {
+    color: rgb(126, 0, 0);
+    text-decoration: underline;
+}
+
+#list li {
+    font-size: 3rem;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    border: 2px solid white;
+    padding: 8px;
+    margin-bottom: 6px;
+    list-style: none;
+}
+
+#list li {
+    border: 2px solid hsl(0, 0%, 90%);
+    padding: 8px;
+    margin-bottom: 6px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-x {
+    background: none;
+    border: none;
+    color: rgb(126, 0, 0);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.delete-x:hover {
+    color: white;
+}
+
+.task-check {
+    margin-right: 10px;
+}
+
+#list li span {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.done {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+body {
+    background-color: hsl(60, 30%, 50%);
+    /* fallback while the image loads */
+    background-image: url("Ruler_Scrap_Paper_BW.jpg");
+    background-size: fill;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+#list li {
+    border: 2px solid hsl(0, 0%, 30%);
+}
+
+#list li {
+    cursor: grab;
+}
+
+#list li.dragging {
+    opacity: 0.4;
+}
+
+#list li.drag-over {
+    border-color: white;
+    border-style: dashed;
+}
+
+/* Task descriptions */
+#list li {
+    flex-wrap: wrap;
+}
+
+.task-desc {
+    flex-basis: 100%;
+    margin-top: 6px;
+    padding: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    box-sizing: border-box;
+    cursor: text;
+}
+
+/* Voice command */
+.voice-btn {
+    cursor: pointer;
+    margin-left: 4px;
+}
+
+.voice-btn.listening {
+    background-color: rgb(200, 40, 40);
+    animation: pulse 1s infinite;
+}
+
+.voice-btn.awake {
+    background-color: rgb(40, 160, 70);
+}
+
+.voice-status {
+    min-height: 1.2em;
+    font-style: italic;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(200, 40, 40, 0.6);
+    }
+
+    50% {
+        box-shadow: 0 0 0 8px rgba(200, 40, 40, 0);
+    }
+}
+
+/* Rounded Add Task and Mic buttons */
+#addTask,
+.voice-btn {
+    border-radius: 999px;
+    padding: 6px 16px;
+}
+
+.voice-btn {
+    padding: 6px 10px;
+}
+
+/* Inline task title editing */
+#list li span {
+    cursor: text;
+}
+
+.task-edit {
+    flex-grow: 1;
+    font-size: inherit;
+    font-family: inherit;
+    padding: 2px 6px;
+    margin-right: 6px;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* Task numbering */
+#list {
+    counter-reset: task-number;
+    padding: 0;
+}
+
+#list li {
+    counter-increment: task-number;
+}
+
+#list li::before {
+    content: counter(task-number) ".";
+    margin-right: 10px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-weight: bold;
+}
+
+/* Clock */
+.clock {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    color: hsl(0, 100%, 50%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 0 16px;
+}
+
+/* Dark mode toggle (top right) */
+.theme-btn {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 10;
+    cursor: pointer;
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 1.2rem;
+}
+
+/* Dark mode */
+body.dark {
+    background-color: hsl(60, 8%, 14%);
+    background-blend-mode: multiply;
+    /* darkens the background image too */
+    color: hsl(0, 0%, 90%);
+}
+
+body.dark .highlight {
+    background-color: hsl(0, 0%, 22%);
+}
+
+body.dark #list li {
+    border-color: hsl(0, 0%, 55%);
+}
+
+body.dark #list li.drag-over {
+    border-color: white;
+}
+
+body.dark .error-text {
+    color: rgb(255, 120, 120);
+}
+
+body.dark .delete-x {
+    color: rgb(255, 120, 120);
+}
+
+body.dark .delete-x:hover {
+    color: white;
+}
+
+body.dark .clock {
+    color: hsl(0, 100%, 68%);
+}
+
+body.dark input[type="text"],
+body.dark textarea,
+body.dark button {
+    background-color: hsl(0, 0%, 20%);
+    color: hsl(0, 0%, 92%);
+    border: 1px solid hsl(0, 0%, 45%);
+}
+
+body.dark .delete-x {
+    background: none;
+    border: none;
+    color: rgb(255, 120, 120);
+}
+
+body.dark .voice-btn.listening {
+    background-color: rgb(200, 40, 40);
+}
+
+body.dark .voice-btn.awake {
+    background-color: rgb(40, 160, 70);
+}
+
+
+/* Filter (top left) */
+.filter-wrap {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 10;
+    text-align: left;
+}
+
+.filter-btn {
+    cursor: pointer;
+    border-radius: 999px;
+    padding: 6px 14px;
+}
+
+.filter-menu {
+    margin-top: 6px;
+    padding: 8px 12px;
+    background-color: hsl(0, 0%, 95%);
+    border: 1px solid hsl(0, 0%, 30%);
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.filter-menu label {
+    display: block;
+    padding: 4px 0;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.filter-note {
+    min-height: 1.2em;
+    font-style: italic;
+}
+
+body.dark .filter-menu {
+    background-color: hsl(0, 0%, 20%);
+    border-color: hsl(0, 0%, 45%);
+    color: hsl(0, 0%, 92%);
+}
